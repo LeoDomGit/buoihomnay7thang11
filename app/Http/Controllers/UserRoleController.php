@@ -67,11 +67,11 @@ class UserRoleController extends Controller
     public function update(Request $request, UserRoleM $userRoleM)
     {
     $validator = Validator::make($request->all(), [ 
-        'id' => 'required|exists: role_tbl, id',
-        'rolename' => 'required|unique:role_tbl, name',
+        'id' => 'required|exists:role_tbl,id',
+        'rolename' => 'required|unique:role_tbl,name',
     ],[
-    'rolename.required'=>'Thiếu tên loại tài khoản', 
-    'rolename.unique'=>'Loại tài khoản đã tồn tại',
+        'rolename.required'=>'Thiếu tên loại tài khoản', 
+        'rolename.unique'=>'Loại tài khoản đã tồn tại',
      'id.required'=>'Thiếu mã loại tài khoản', 
      'id.exists'=>'Mã loại tài khoản không hợp lệ',
     ]);
